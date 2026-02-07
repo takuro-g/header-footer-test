@@ -1,6 +1,5 @@
 .page {
   min-height: 100vh;
-  --safari-strip: 100px;
 }
 
 .safari .dummy {
@@ -17,16 +16,16 @@
   z-index: 9999;
   transform: translate3d(0, 0, 9999px);
   width: 100%;
-  height: var(--safari-strip);
+  height: 100px;
   background: #fff;
 }
 
 .safari::before {
-  top: calc(var(--safari-strip) * -1);
+  top: -100px;
 }
 
 .safari::after {
-  bottom: calc(var(--safari-strip) * -1);
+  bottom: -100px;
 }
 
 .app-header,
@@ -45,7 +44,7 @@
 }
 
 .app-footer {
-  bottom: var(--safari-strip);
+  bottom: 0;
   border-top: 1px solid var(--border);
   border-bottom: none;
   background: rgba(245, 235, 218, 0.95);
@@ -84,7 +83,7 @@
 }
 
 .app-main {
-  padding: 5.8rem 1.2rem calc(6.4rem + var(--safari-strip));
+  padding: 5.8rem 1.2rem 6.4rem;
   display: flex;
   flex-direction: column;
   gap: 2.2rem;
