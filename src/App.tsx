@@ -50,27 +50,14 @@ function App() {
     const page = pageRef.current;
     if (!page) return;
 
-    if (CSS.supports("height: 100svh")) {
+    if (CSS.supports("height: 100dvh")) {
       return;
     }
-
-    let minHeight = window.innerHeight;
-    let lastWidth = window.innerWidth;
 
     const update = () => {
       const viewport = window.visualViewport;
       const height = viewport?.height ?? window.innerHeight;
-      const width = viewport?.width ?? window.innerWidth;
-
-      if (Math.abs(width - lastWidth) > 1) {
-        minHeight = height;
-        lastWidth = width;
-      } else {
-        minHeight = Math.min(minHeight, height);
-      }
-
-      const offset = Math.max(0, height - minHeight);
-      page.style.setProperty("--footer-offset", `${offset}px`);
+      page.style.setProperty("--dvh", `${height}px`);
     };
 
     update();
