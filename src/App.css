@@ -44,7 +44,8 @@
 
 .brand {
   margin: 0;
-  font-family: "Impact", "Haettenschweiler", "Franklin Gothic Medium", sans-serif;
+  font-family:
+    "Impact", "Haettenschweiler", "Franklin Gothic Medium", sans-serif;
   letter-spacing: 0.04em;
   font-size: 1.05rem;
 }

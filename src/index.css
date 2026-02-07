@@ -26,7 +26,12 @@ body {
   margin: 0;
   min-height: 100vh;
   color: var(--ink);
-  background: radial-gradient(circle at top left, #fff7ea 0%, #f6ede0 45%, #f0e6d3 100%);
+  background: radial-gradient(
+    circle at top left,
+    #fff7ea 0%,
+    #f6ede0 45%,
+    #f0e6d3 100%
+  );
 }
 
 #root {

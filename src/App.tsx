@@ -1,47 +1,46 @@
-import './App.css'
+import "./App.css";
 
 const sections = [
   {
-    title: 'Today\'s Loop',
-    subtitle: 'Quick snapshots • 08:00 → 20:30',
+    title: "Today's Loop",
+    subtitle: "Quick snapshots • 08:00 → 20:30",
     items: [
-      '朝の準備とチェックイン',
-      'カフェで作業とレビュー',
-      '午後のスプリント',
-      '夕方の散歩と整理',
-      '夜のログと明日の準備'
-    ]
+      "朝の準備とチェックイン",
+      "カフェで作業とレビュー",
+      "午後のスプリント",
+      "夕方の散歩と整理",
+      "夜のログと明日の準備",
+    ],
   },
   {
-    title: 'Roadmap Bits',
-    subtitle: '2週間の小さな目標',
+    title: "Roadmap Bits",
+    subtitle: "2週間の小さな目標",
     items: [
-      'UI改善の優先順位付け',
-      '通知設計の見直し',
-      '新しいカードレイアウト',
-      '読み込み体験の最適化',
-      'アクセシビリティ微調整'
-    ]
+      "UI改善の優先順位付け",
+      "通知設計の見直し",
+      "新しいカードレイアウト",
+      "読み込み体験の最適化",
+      "アクセシビリティ微調整",
+    ],
   },
   {
-    title: 'Notes Shelf',
-    subtitle: '気になるメモの束',
+    title: "Notes Shelf",
+    subtitle: "気になるメモの束",
     items: [
-      'スクロールに合わせた陰影',
-      'フッターの視認性',
-      'タップ領域の最小サイズ',
-      'バッジの色数を整理',
-      '短いマイクロコピー'
-    ]
-  }
-]
+      "スクロールに合わせた陰影",
+      "フッターの視認性",
+      "タップ領域の最小サイズ",
+      "バッジの色数を整理",
+      "短いマイクロコピー",
+    ],
+  },
+];
 
 const cards = Array.from({ length: 12 }, (_, i) => ({
   title: `セクション ${i + 1}`,
-  meta: `#${(i + 1).toString().padStart(2, '0')} • 3 min read`,
-  body:
-    '縦に長いダミーコンテンツ。読みやすさとリズム感のためにテキストを分割しています。'
-}))
+  meta: `#${(i + 1).toString().padStart(2, "0")} • 3 min read`,
+  body: "縦に長いダミーコンテンツ。読みやすさとリズム感のためにテキストを分割しています。",
+}));
 
 function App() {
   return (
@@ -144,7 +143,7 @@ function App() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
