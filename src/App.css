@@ -1,8 +1,7 @@
 .page {
   min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100svh;
   --footer-offset: 0px;
-  --dvh: 100vh;
 }
 
 .app-header,
@@ -68,16 +67,9 @@
   margin: 0 auto;
 }
 
-@supports (height: 100dvh) {
+@supports (height: 100svh) {
   .page {
-    --footer-offset: max(0px, calc(100vh - 100dvh));
-  }
-}
-
-@supports not (height: 100dvh) {
-  .page {
-    min-height: var(--dvh, 100vh);
-    --footer-offset: max(0px, calc(100vh - var(--dvh, 100vh)));
+    --footer-offset: max(0px, calc(100vh - 100svh));
   }
 }
 
