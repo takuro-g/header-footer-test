@@ -1,5 +1,7 @@
 .page {
   min-height: 100vh;
+  min-height: 100svh;
+  --footer-offset: 0px;
 }
 
 .app-header,
@@ -18,7 +20,7 @@
 }
 
 .app-footer {
-  bottom: 0;
+  bottom: var(--footer-offset, 0px);
   border-top: 1px solid var(--border);
   border-bottom: none;
   background: rgba(245, 235, 218, 0.95);
@@ -57,12 +59,18 @@
 }
 
 .app-main {
-  padding: 5.8rem 1.2rem 6.4rem;
+  padding: 5.8rem 1.2rem calc(6.4rem + var(--footer-offset, 0px));
   display: flex;
   flex-direction: column;
   gap: 2.2rem;
   max-width: 480px;
   margin: 0 auto;
+}
+
+@supports (height: 100svh) {
+  .page {
+    --footer-offset: max(0px, calc(100vh - 100svh));
+  }
 }
 
 .hero {
