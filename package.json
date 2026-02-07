@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && powershell -NoProfile -Command \"Remove-Item docs -Recurse -Force -ErrorAction SilentlyContinue; Copy-Item dist -Destination docs -Recurse -Force\"",
     "lint": "eslint .",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,html,js,jsx,json,md}\"",
     "preview": "vite preview",
