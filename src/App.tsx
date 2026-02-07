@@ -45,9 +45,6 @@ const cards = Array.from({ length: 12 }, (_, i) => ({
 function App() {
   return (
     <div className="page">
-      <div className="safari">
-        <div className="dummy" />
-      </div>
       <header className="app-header">
         <div className="header-left">
           <span className="logo-dot" />
