@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import "./App.css";
 
 const sections = [
@@ -44,48 +43,8 @@ const cards = Array.from({ length: 12 }, (_, i) => ({
 }));
 
 function App() {
-  const pageRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const page = pageRef.current;
-    if (!page) return;
-
-    if (CSS.supports("height: 100svh")) {
-      return;
-    }
-
-    let minHeight = window.innerHeight;
-    let lastWidth = window.innerWidth;
-
-    const update = () => {
-      const viewport = window.visualViewport;
-      const height = viewport?.height ?? window.innerHeight;
-      const width = viewport?.width ?? window.innerWidth;
-
-      if (Math.abs(width - lastWidth) > 1) {
-        minHeight = height;
-        lastWidth = width;
-      } else {
-        minHeight = Math.min(minHeight, height);
-      }
-
-      const offset = Math.max(0, height - minHeight);
-      page.style.setProperty("--footer-offset", `${offset}px`);
-    };
-
-    update();
-
-    window.addEventListener("resize", update);
-    window.visualViewport?.addEventListener("resize", update);
-
-    return () => {
-      window.removeEventListener("resize", update);
-      window.visualViewport?.removeEventListener("resize", update);
-    };
-  }, []);
-
   return (
-    <div className="page" ref={pageRef}>
+    <div className="page">
       <header className="app-header">
         <div className="header-left">
           <span className="logo-dot" />
